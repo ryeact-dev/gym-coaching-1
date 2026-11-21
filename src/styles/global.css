@@ -117,7 +117,7 @@ img { display: block; max-width: 100%; }
 .plan .btn { background: var(--ink); color: var(--paper); }
 
 .coach { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; padding: 0 0 160px; }
-.coach .photo { aspect-ratio: 392/463; background: #243133 center/cover; }
+.coach .photo { background-size: cover; aspect-ratio: 392/463; background: #243133 center/cover; }
 .coach h2 { margin: 18px 0 36px; }
 .coach .lede { font-size: 24px; line-height: 1.4; color: #555; max-width: 540px; margin-bottom: 44px; }
 .facts div { display: flex; justify-content: space-between; border-top: 1px solid #c9c5bb; padding: 18px 0; font-size: 20px; }
