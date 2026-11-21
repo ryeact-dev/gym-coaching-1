@@ -39,7 +39,10 @@ function onScroll() {
   panels.forEach((p, i) => {
     const r = p.getBoundingClientRect();
     const bg = p.querySelector('.bg');
-    if (bg) bg.style.transform = `translateY(${(-r.top / vh) * 6}%) scale(${1.04 + Math.min(Math.abs(r.top) / vh, 1) * 0.04})`;
+    const nextTop = panels[i + 1] ? panels[i + 1].getBoundingClientRect().top : vh;
+    const entering = Math.max(0, Math.min(1, r.top / vh)); // 1 → just below screen, 0 → in place
+    const covered = Math.max(0, Math.min(1, 1 - nextTop / vh)); // 0 → untouched, 1 → fully covered
+    if (bg) bg.style.transform = `translateY(${entering * 5 - covered * 5}%) scale(${1.04 + covered * 0.05})`;
     const next = panels[i + 1];
     const dim = p.querySelector('.dim');
     if (next && dim) {
