@@ -32,8 +32,6 @@ document.querySelectorAll('.reveal, .chapter, [data-split]').forEach((el) => io.
 
 // parallax on panel backgrounds + dim previous panel as next one slides over
 const panels = [...document.querySelectorAll('.panel')];
-const header = document.querySelector('.header');
-let lastY = 0;
 function onScroll() {
   const vh = innerHeight;
   panels.forEach((p, i) => {
@@ -50,12 +48,7 @@ function onScroll() {
       dim.style.opacity = Math.max(0, Math.min(0.75, 1 - nr / vh)) * 0.75;
     }
   });
-  const y = scrollY;
-  header.classList.toggle('hide', y > lastY && y > vh * 0.6 && y - lastY > 2);
-  if (y < lastY) header.classList.remove('hide');
-  const lt = [...document.querySelectorAll('.light')].some((el) => { const r = el.getBoundingClientRect(); return r.top < 50 && r.bottom > 50; });
-  header.classList.toggle('on-light', lt);
-  lastY = y;
+
 }
 addEventListener('scroll', onScroll, { passive: true });
 onScroll();
