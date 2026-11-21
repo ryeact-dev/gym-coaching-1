@@ -193,6 +193,8 @@ img { display: block; max-width: 100%; }
 .reveal.in { opacity: 1; transform: none; }
 
 @media (max-width: 960px) {
+  .footer { grid-template-columns: 1fr; gap: 20px; } .footer .copy { text-align: left; } .footer nav { flex-wrap: wrap; }
+  .about { gap: 32px; }
   .stats { grid-template-columns: repeat(3, 1fr); } .story { margin-left: 0; }
   .nav { display: none; }
   .contact .grid { grid-template-columns: 1fr; gap: 56px; }
@@ -247,5 +249,4 @@ img { display: block; max-width: 100%; }
 .rules h3 { font-size: 24px; margin-bottom: 8px; }
 .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
 .tags span { border: 1px solid var(--ink); padding: 8px 12px; }
-@media (max-width: 960px) { .about { grid-template-columns: 1fr; } .about .photo { position: static; } }
-@media (max-width: 700px) { .print { grid-template-columns: 1fr; } .timeline .row { grid-template-columns: 1fr; gap: 14px; } .friend { padding: 24px; } }
+@media (max-width: 700px) { .about { grid-template-columns: 1fr; } .about .photo { position: static; } .print { grid-template-columns: 1fr; } .timeline .row { grid-template-columns: 1fr; gap: 14px; } .friend { padding: 24px; } }
