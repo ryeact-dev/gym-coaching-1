@@ -150,13 +150,17 @@ img { display: block; max-width: 100%; }
 .reveal { opacity: 0; transform: translateY(40px); transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: var(--d, 0s); }
 .reveal.in { opacity: 1; transform: none; }
 
-@media (max-width: 860px) {
+@media (max-width: 960px) {
+  .nav { display: none; }
+  .contact .grid { grid-template-columns: 1fr; gap: 56px; }
+  .plan { padding: 20px; } .price b { font-size: 56px; }
+}
+@media (max-width: 700px) {
   .hero h1 { font-size: 17vw; }
   .chapter .num h2 { font-size: 28vw; }
   .chapter .num { top: auto; bottom: 8vh; }
-  .nav { display: none; }
-  .steps, .plans, .coach, .contact .grid { grid-template-columns: 1fr; }
   .chapter .quote { width: auto; left: var(--pad); top: 14vh; }
+  .steps, .plans, .coach { grid-template-columns: 1fr; }
   .hero .cta { display: none; }
   .footer { grid-template-columns: 1fr; gap: 20px; } .footer .copy { text-align: left; } .footer nav { flex-wrap: wrap; }
 }
