@@ -53,8 +53,8 @@ function onScroll() {
   const y = scrollY;
   header.classList.toggle('hide', y > lastY && y > vh * 0.6 && y - lastY > 2);
   if (y < lastY) header.classList.remove('hide');
-  const lt = document.querySelector('.light').getBoundingClientRect();
-  header.classList.toggle('on-light', lt.top < 50 && lt.bottom > 50);
+  const lt = [...document.querySelectorAll('.light')].some((el) => { const r = el.getBoundingClientRect(); return r.top < 50 && r.bottom > 50; });
+  header.classList.toggle('on-light', lt);
   lastY = y;
 }
 addEventListener('scroll', onScroll, { passive: true });

@@ -1,0 +1,56 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Cta from '../../components/Cta.astro';
+import { chapters } from '../../data/chapters.js';
+
+export function getStaticPaths() {
+  return chapters.map((c, i) => ({ params: { slug: c.slug }, props: { c, next: chapters[(i + 1) % chapters.length] } }));
+}
+const { c, next } = Astro.props;
+const s = c.stats;
+---
+<Layout title={`${c.name}'s chapter · Daniel Shaw`}>
+  <Header />
+  <main>
+    <section class="panel static chapter in">
+      <div class="bg" style={`background-image:url(${c.img});background-color:${c.bg}`}></div>
+      <div class="top mono"><span>Chapter {c.n}</span><span>{c.weeks}</span></div>
+      <div class="num">
+        <h2 class="display">{c.big}</h2>
+        <span class="highlight">{c.tag}</span>
+      </div>
+      <div class="quote">
+        <p>“{c.quote}”</p>
+        <span class="mono">{c.name.toUpperCase()}, {c.age} · {c.role.toUpperCase()}</span>
+      </div>
+    </section>
+
+    <div class="light">
+      <div class="wrap">
+        <div class="stats reveal">
+          <div><span class="mono dim">What we measured</span><b>{s.measured}</b></div>
+          <div><span class="mono dim">Week 1</span><b>{s.start}</b></div>
+          <div><span class="mono dim">Now</span><b><mark>{s.now}</mark></b></div>
+          <div><span class="mono dim">Sessions kept</span><b>{s.kept}</b></div>
+          <div><span class="mono dim">Length</span><b>{s.length}</b></div>
+        </div>
+        <article class="story">
+          <h3 class="reveal">Where we started</h3><p class="reveal">{c.started}</p>
+          <h3 class="reveal">What we changed</h3><p class="reveal">{c.changed}</p>
+          <h3 class="reveal">Where it is now</h3><p class="reveal">{c.now}</p>
+          <small class="mono dim reveal">Shared with the client’s written permission. First names only. Results depend on the person, their start point and how often they train.</small>
+        </article>
+      </div>
+      <Cta />
+    </div>
+
+    <a class="next" href={`/chapters/${next.slug}`}>
+      <div class="bg" style={`background-image:url(${next.img});background-color:${next.bg}`}></div>
+      <span class="mono">Next chapter</span>
+      <b class="display">{next.name} →</b>
+    </a>
+  </main>
+  <Footer />
+</Layout>

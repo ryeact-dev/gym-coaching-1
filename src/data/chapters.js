@@ -1,0 +1,38 @@
+export const chapters = [
+  {
+    slug: 'sam', n: '01', weeks: '12 WEEKS', big: '+45 kg', tag: 'added to the deadlift',
+    quote: 'I used to dread Mondays. Now I deadlift on them.', name: 'Sam', age: 34, role: 'office manager',
+    img: '/images/chapter-1.jpg', bg: '#2a2d2e',
+    stats: { measured: 'Deadlift', start: '40 kg', now: '85 kg', kept: '35 of 36', length: '12 weeks' },
+    started: 'Sam came in with a stiff lower back from eight hours at a desk and a deadlift of 40 kg that hurt to finish. Monday sessions were the first thing to go when work got busy.',
+    changed: 'Two sessions a week, always Monday and Thursday at 7 am, before work could take them. We rebuilt the hinge with a kettlebell first, then went back to the bar.',
+    now: '85 kg for a clean set of three, and no back-pain days in the last six weeks. Sam has booked the next twelve.',
+  },
+  {
+    slug: 'priya', n: '02', weeks: '10 WEEKS', big: '28/30', tag: 'sessions kept on a night-shift rota',
+    quote: 'He built my training around my shifts, not the other way round.', name: 'Priya', age: 29, role: 'nurse',
+    img: '/images/chapter-2.jpg', bg: '#3a2a26',
+    stats: { measured: 'Sessions kept', start: 'Quit twice', now: '28 of 30', kept: '28 of 30', length: '10 weeks' },
+    started: 'Priya had joined two gyms and stopped both within a month. Her rota changes every week, so fixed classes never worked.',
+    changed: 'Three short plans: one for day weeks, one for night weeks, one for the days in between. She sends her rota on Sunday and we pick the plan together.',
+    now: '28 of 30 sessions done in ten weeks, and her goblet squat went from 12 to 24 kg. The plan bends; it doesn’t break.',
+  },
+  {
+    slug: 'mark', n: '03', weeks: '12 WEEKS', big: '−8:30', tag: 'off his 5 km time',
+    quote: 'Ten years off. Now I keep up with my kids at football.', name: 'Mark', age: 46, role: 'dad of two',
+    img: '/images/chapter-3.jpg', bg: '#2d3b2a',
+    stats: { measured: '5 km run', start: '38:10', now: '29:40', kept: '34 of 36', length: '12 weeks' },
+    started: 'Mark had not trained for ten years. His first 5 km took 38 minutes with three walking breaks, and he was sore for days.',
+    changed: 'One strength session and two easy runs a week. The runs were slow on purpose, and we added a minute of running each week instead of chasing pace.',
+    now: '29:40 without stopping, 22 push-ups in a row, and Saturday football with his kids that he finishes on his feet.',
+  },
+  {
+    slug: 'ellie', n: '04', weeks: 'WEEK 8 OF 12', big: '12 km', tag: 'longest hill walk, up from 6',
+    quote: 'I wanted my legs back for the hills. They’re coming back.', name: 'Ellie', age: 52, role: 'hill walker',
+    img: '/images/chapter-4.jpg', bg: '#283a30',
+    stats: { measured: 'Longest hill walk', start: '6 km', now: '12 km', kept: '22 of 22', length: 'Week 8 of 12' },
+    started: 'Ellie loved hill walking, but her knees ached on every descent, so her walks kept getting shorter.',
+    changed: 'Step-ups, slow lunges and calf work twice a week, plus one longer walk at the weekend that grows by a kilometre at a time.',
+    now: 'Week 8: a 12 km walk with quiet knees on the way down. Four weeks to go, and the plan is a 15 km ridge.',
+  },
+];

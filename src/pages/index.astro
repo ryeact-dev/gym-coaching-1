@@ -1,22 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-// Drop your images in /public/images using these names (jpg).
-const chapters = [
-  { n: '01', weeks: '12 WEEKS', big: '+45 kg', tag: 'added to the deadlift', quote: 'I used to dread Mondays. Now I deadlift on them.', who: 'SAM, 34 · OFFICE MANAGER', img: '/images/chapter-1.jpg', bg: '#2a2d2e' },
-  { n: '02', weeks: '10 WEEKS', big: '28/30', tag: 'sessions kept on a night-shift rota', quote: 'He built my training around my shifts, not the other way round.', who: 'PRIYA, 29 · NURSE', img: '/images/chapter-2.jpg', bg: '#3a2a26' },
-  { n: '03', weeks: '12 WEEKS', big: '−8:30', tag: 'off his 5 km time', quote: 'Ten years off. Now I keep up with my kids at football.', who: 'MARK, 46 · DAD OF TWO', img: '/images/chapter-3.jpg', bg: '#2d3b2a' },
-  { n: '04', weeks: 'WEEK 8 OF 12', big: '12 km', tag: 'longest hill walk, up from 6', quote: 'I wanted my legs back for the hills. They’re coming back.', who: 'ELLIE, 52 · HILL WALKER', img: '/images/chapter-4.jpg', bg: '#283a30' },
-];
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { chapters } from '../data/chapters.js';
 ---
 <Layout>
-  <header class="header">
-    <a class="logo" href="#top"><b>Daniel Shaw</b><span class="mono">Strength coach · Glasgow</span></a>
-    <nav class="nav mono">
-      <a href="#chapters">Chapters</a><a href="#how">How it works</a><a href="#packages">Packages</a><a href="#about">About</a>
-    </nav>
-    <a class="btn" href="#call">Book a call <span class="arr">→</span></a>
-  </header>
+  <Header />
 
   <main id="top">
     <section class="panel hero">
@@ -47,13 +37,13 @@ const chapters = [
           </div>
           <div class="quote">
             <p>“{c.quote}”</p>
-            <span class="mono">{c.who}</span>
-            <a href="#chapters">Read the full chapter →</a>
+            <span class="mono">{c.name.toUpperCase()}, {c.age} · {c.role.toUpperCase()}</span>
+            <a href={`/chapters/${c.slug}`}>Read the full chapter →</a>
           </div>
         </section>
       ))}
     </div>
-    <div class="seeall"><a href="#chapters">See all chapters, with the full numbers →</a></div>
+    <div class="seeall"><a href="/chapters">See all chapters, with the full numbers →</a></div>
 
     <section class="light" id="how">
       <div class="wrap section">
@@ -119,11 +109,7 @@ const chapters = [
           <button class="btn" type="submit">Book my 15-min call</button>
         </form>
       </div>
-      <footer class="footer">
-        <b>Daniel Shaw</b>
-        <nav class="mono"><a href="#chapters">Chapters</a><a href="#packages">Packages</a><a href="#about">FAQ</a><a href="#top">Privacy</a><a href="#top">Instagram</a><a href="mailto:hello@danielshaw.co.uk">Email</a></nav>
-        <span class="copy mono">© 2026 Daniel Shaw</span>
-      </footer>
+      <Footer />
     </section>
   </main>
 </Layout>
