@@ -100,7 +100,7 @@ img { display: block; max-width: 100%; }
 /* light sections */
 .light { position: relative; z-index: 5; background: var(--cream); color: var(--ink); }
 .light .mono.dim { color: #555; }
-.section { padding: 160px 0 110px; }
+.section { padding-block: 160px 110px; }
 .h2 { font-size: clamp(40px, 5.4vw, 82px); font-weight: 800; letter-spacing: -.04em; line-height: .92; }
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 90px; }
 .step { border-top: 2px solid var(--ink); padding-top: 18px; }
@@ -118,12 +118,12 @@ img { display: block; max-width: 100%; }
 .plan li { font-size: 18px; margin-bottom: 14px; display: flex; gap: 10px; }
 .plan .btn { background: var(--ink); color: var(--paper); }
 
-.coach { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; padding: 0 0 160px; }
+.coach { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; padding-block: 0 160px; }
 .coach .photo { background-size: cover; aspect-ratio: 392/463; background: #243133 center/cover; }
 .coach h2 { margin: 18px 0 36px; }
 .coach .lede { font-size: 24px; line-height: 1.4; color: #555; max-width: 540px; margin-bottom: 44px; }
 .facts div { display: flex; justify-content: space-between; border-top: 1px solid #c9c5bb; padding: 18px 0; font-size: 20px; }
-.facts div span:first-child { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .08em; color: #555; align-self: center; }
+.facts div span:first-child { font-family: 'JetBrains Mono', monospace; text-transform: uppercase; font-size: 12px; letter-spacing: .08em; color: #555; align-self: center; }
 .word { display: inline-block; filter: blur(14px); opacity: 0; transform: translateY(6px); transition: filter .8s var(--ease), opacity .8s var(--ease), transform .8s var(--ease); }
 .revealed .word { filter: none; opacity: 1; transform: none; }
 
