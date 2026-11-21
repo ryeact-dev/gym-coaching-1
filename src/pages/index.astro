@@ -1,0 +1,129 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Drop your images in /public/images using these names (jpg).
+const chapters = [
+  { n: '01', weeks: '12 WEEKS', big: '+45 kg', tag: 'added to the deadlift', quote: 'I used to dread Mondays. Now I deadlift on them.', who: 'SAM, 34 · OFFICE MANAGER', img: '/images/chapter-1.jpg', bg: '#2a2d2e' },
+  { n: '02', weeks: '10 WEEKS', big: '28/30', tag: 'sessions kept on a night-shift rota', quote: 'He built my training around my shifts, not the other way round.', who: 'PRIYA, 29 · NURSE', img: '/images/chapter-2.jpg', bg: '#3a2a26' },
+  { n: '03', weeks: '12 WEEKS', big: '−8:30', tag: 'off his 5 km time', quote: 'Ten years off. Now I keep up with my kids at football.', who: 'MARK, 46 · DAD OF TWO', img: '/images/chapter-3.jpg', bg: '#2d3b2a' },
+  { n: '04', weeks: 'WEEK 8 OF 12', big: '12 km', tag: 'longest hill walk, up from 6', quote: 'I wanted my legs back for the hills. They’re coming back.', who: 'ELLIE, 52 · HILL WALKER', img: '/images/chapter-4.jpg', bg: '#283a30' },
+];
+---
+<Layout>
+  <header class="header">
+    <a class="logo" href="#top"><b>Daniel Shaw</b><span class="mono">Strength coach · Glasgow</span></a>
+    <nav class="nav mono">
+      <a href="#chapters">Chapters</a><a href="#how">How it works</a><a href="#packages">Packages</a><a href="#about">About</a>
+    </nav>
+    <a class="btn" href="#call">Book a call <span class="arr">→</span></a>
+  </header>
+
+  <main id="top">
+    <section class="panel hero">
+      <div class="bg" style="background-image:url(/images/hero.jpg);background-color:#1f2a2b"></div>
+      <div class="dim"></div>
+      <div class="hero-copy">
+      <p class="mono eyebrow fadein">4 chapters · shared with each client’s permission</p>
+      <h1 class="display">
+        <span class="line"><span>Four clients.</span></span>
+        <span class="line"><span>Four chapters.</span></span>
+      </h1></div>
+      <span class="tag fadein">Yours could be the fifth.</span>
+      <div class="cta fadein">
+        <span class="mono">Scroll · 4 chapters ↓</span>
+        <a class="btn" href="#call">Book a 15-min call <span class="arr">→</span></a>
+      </div>
+    </section>
+
+    <div id="chapters">
+      {chapters.map((c) => (
+        <section class="panel chapter">
+          <div class="bg" style={`background-image:url(${c.img});background-color:${c.bg}`}></div>
+          <div class="dim"></div>
+          <div class="top mono"><span>Chapter {c.n}</span><span>{c.weeks}</span></div>
+          <div class="num">
+            <h2 class="display">{c.big}</h2>
+            <span class="highlight">{c.tag}</span>
+          </div>
+          <div class="quote">
+            <p>“{c.quote}”</p>
+            <span class="mono">{c.who}</span>
+            <a href="#chapters">Read the full chapter →</a>
+          </div>
+        </section>
+      ))}
+    </div>
+    <div class="seeall"><a href="#chapters">See all chapters, with the full numbers →</a></div>
+
+    <section class="light" id="how">
+      <div class="wrap section">
+        <p class="mono dim reveal">How a chapter starts</p>
+        <h2 class="h2 reveal" style="margin-top:28px;--d:.08s">Every chapter starts<br />with 15 minutes.</h2>
+        <div class="steps">
+          <div class="step reveal"><span class="mono dim">Frame 01</span><h3>The call</h3><p>15 minutes. Your goal, your week, and one first step you can take even if we never work together.</p></div>
+          <div class="step reveal" style="--d:.12s"><span class="mono dim">Frame 02</span><h3>The plan</h3><p>Three numbers we’ll move together. You pick them. Not ten, three.</p></div>
+          <div class="step reveal" style="--d:.24s"><span class="mono dim">Frame 03</span><h3>The chapter</h3><p>Twelve weeks, every session written down. At the end, you decide if it’s shared here.</p></div>
+        </div>
+
+        <div id="packages" style="margin-top:180px">
+          <p class="mono dim reveal">Packages</p>
+          <div class="pk-head">
+            <h2 class="h2 reveal">Pick your length.</h2>
+            <span class="mono dim reveal">Prices in GBP · cancel a session 24 h ahead and it moves, free</span>
+          </div>
+          <div class="plans reveal">
+            <div class="plan"><span class="mono">A · Try it</span><h3>Trial week</h3>
+              <div class="price"><b>£60</b><span class="mono">One-off</span></div>
+              <ul><li>+ Assessment session</li><li>+ One training session</li><li>+ Your week-1 numbers to keep</li></ul>
+              <a class="btn" href="#call">Start with a trial <span class="arr">→</span></a></div>
+            <div class="plan hot"><span class="mono">B · Most clients</span><h3>12-week chapter</h3>
+              <div class="price"><b>£720</b><span class="mono">£30 a session</span></div>
+              <ul><li>+ 24 sessions, start and end review</li><li>+ Every session written down</li><li>+ Split into 3 monthly payments</li></ul>
+              <a class="btn" href="#call">Start my chapter <span class="arr">→</span></a></div>
+            <div class="plan"><span class="mono">C · Keep going</span><h3>Ongoing</h3>
+              <div class="price"><b>£280</b><span class="mono">A month</span></div>
+              <ul><li>+ For clients after a chapter</li><li>+ A new review every 12 weeks</li><li>+ Pause with 2 weeks’ notice</li></ul>
+              <a class="btn" href="#call">Ask about ongoing <span class="arr">→</span></a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap coach" id="about">
+        <div class="photo reveal" style="background-image:url(/images/coach.jpg)"></div>
+        <div>
+          <span class="mono dim">The coach</span>
+          <h2 class="h2" data-split>I’m Daniel.<br />I keep my list short.</h2>
+          <p class="lede reveal">Two years ago I was the one quitting gyms by February. Writing every session down is what changed it. Now I do it for my clients, and I keep the list small so every chapter gets my full attention.</p>
+          <div class="facts reveal">
+            <div><span>Qualified</span><span>Level 3 Personal Trainer, 2024</span></div>
+            <div><span>Also</span><span>First aid · Kettlebell instructor</span></div>
+            <div><span>Where</span><span>Your gym, Glasgow · or online</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="call">
+      <div class="wrap grid">
+        <div>
+          <span class="mono y reveal">Chapter 05</span>
+          <h2 class="h2 reveal" style="--d:.08s">The next chapter<br />could be yours.</h2>
+          <p class="lede reveal" style="--d:.16s">Book a 15-minute call. We talk about your goal and your week, and you leave with a first step, even if we don’t work together.</p>
+          <a class="mail reveal" style="--d:.2s" href="mailto:hello@danielshaw.co.uk">Rather write? hello@danielshaw.co.uk</a>
+        </div>
+        <form class="card reveal" style="--d:.15s">
+          <label class="mono">First name</label><input placeholder="Your first name" required />
+          <label class="mono">Phone or email</label><input placeholder="So I can reply" required />
+          <label class="mono">Your goal in one line</label><input placeholder="e.g. lift without back pain" />
+          <p class="note mono">I reply within 24 hours.</p>
+          <button class="btn" type="submit">Book my 15-min call</button>
+        </form>
+      </div>
+      <footer class="footer">
+        <b>Daniel Shaw</b>
+        <nav class="mono"><a href="#chapters">Chapters</a><a href="#packages">Packages</a><a href="#about">FAQ</a><a href="#top">Privacy</a><a href="#top">Instagram</a><a href="mailto:hello@danielshaw.co.uk">Email</a></nav>
+        <span class="copy mono">© 2026 Daniel Shaw</span>
+      </footer>
+    </section>
+  </main>
+</Layout>
