@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Plans from '../components/Plans.astro';
 import { chapters } from '../data/chapters.js';
 ---
 <Layout>
@@ -61,19 +62,7 @@ import { chapters } from '../data/chapters.js';
             <h2 class="h2 reveal">Pick your length.</h2>
             <span class="mono dim reveal">Prices in GBP · cancel a session 24 h ahead and it moves, free</span>
           </div>
-          <div class="plans reveal">
-            <div class="plan"><span class="mono">A · Try it</span><h3>Trial week</h3>
-              <div class="price"><b>£60</b><span class="mono">One-off</span></div>
-              <ul><li>+ Assessment session</li><li>+ One training session</li><li>+ Your week-1 numbers to keep</li></ul>
-              <a class="btn" href="#call">Start with a trial <span class="arr">→</span></a></div>
-            <div class="plan hot"><span class="mono">B · Most clients</span><h3>12-week chapter</h3>
-              <div class="price"><b>£720</b><span class="mono">£30 a session</span></div>
-              <ul><li>+ 24 sessions, start and end review</li><li>+ Every session written down</li><li>+ Split into 3 monthly payments</li></ul>
-              <a class="btn" href="#call">Start my chapter <span class="arr">→</span></a></div>
-            <div class="plan"><span class="mono">C · Keep going</span><h3>Ongoing</h3>
-              <div class="price"><b>£280</b><span class="mono">A month</span></div>
-              <ul><li>+ For clients after a chapter</li><li>+ A new review every 12 weeks</li><li>+ Pause with 2 weeks’ notice</li></ul>
-              <a class="btn" href="#call">Ask about ongoing <span class="arr">→</span></a></div>
+          <Plans />
           </div>
         </div>
       </div>

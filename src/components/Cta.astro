@@ -1,8 +1,9 @@
 ---
+const { title = 'Want a chapter<br />of your own?' } = Astro.props;
 ---
 <section class="cta-band wrap">
   <div class="cta-box">
-    <h2 class="h2" data-split>Want a chapter<br />of your own?</h2>
+    <h2 class="h2" data-split set:html={title} />
     <a class="btn dark" href="/#call">Book a 15-min call <span class="arr">→</span></a>
   </div>
 </section>

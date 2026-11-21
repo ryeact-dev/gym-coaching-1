@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Cta from '../components/Cta.astro';
+const steps = [
+  ['Week 0', 'The call', '15 minutes on the phone or video. Your goal, your week, what got in the way before. You leave with one first step, even if we never work together.'],
+  ['Week 1', 'The starting line', 'An assessment session: how you move, what hurts, what you lift today. We write down your week-1 numbers and pick the three we’ll move.'],
+  ['Weeks 2–11', 'Train and log', 'Two or three sessions a week. Every set and every weight goes in your file, so you can see progress even on bad weeks. Messages answered within a day.'],
+  ['Week 12', 'The review', 'We compare week 1 and week 12, line by line. Then you decide what the next twelve weeks are for, and whether your chapter goes on this site.'],
+];
+---
+<Layout title="How it works · Daniel Shaw">
+  <Header />
+  <main>
+    <section class="page-head"><div class="wrap">
+      <span class="mono y reveal">How it works</span>
+      <h1 class="display reveal" style="--d:.08s">Twelve weeks,<br />frame by frame.</h1>
+      <p class="reveal" style="--d:.16s">No guesswork and no surprises. This is what a chapter looks like from the first call to the last review.</p>
+    </div></section>
+    <div class="light">
+      <div class="wrap" style="padding-block:90px 0">
+        <div class="timeline">
+          {steps.map(([w, t, p]) => (<div class="row reveal"><b>{w}</b><div><h3>{t}</h3><p>{p}</p></div></div>))}
+        </div>
+      </div>
+      <Cta title="Week 0 starts<br />with a call." />
+    </div>
+  </main>
+  <Footer />
+</Layout>

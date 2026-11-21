@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Cta from '../components/Cta.astro';
+const qs = [
+  ['Are these real clients?', 'Every chapter on this site is shared with the client’s written permission. They read it before it went up. First names only.'],
+  ['I’m starting from zero. Is that a problem?', 'No. Most chapters start with someone who hasn’t trained in years. Week 1 is just your starting line, whatever it is.'],
+  ['Do I have to share my chapter?', 'No. Your file is yours. It only goes on this site if you say yes at the end, and you can ask me to take it down any time.'],
+  ['What happens on the 15-minute call?', 'We talk about your goal, your week and what got in the way before. If I’m not the right coach for you, I’ll say so.'],
+  ['Can we train online?', 'Yes. You get the same plan and the same file, and we check in by video once a week.'],
+  ['What if I miss a session?', 'Cancel 24 hours ahead and it moves, free. Life happens; the plan bends.'],
+];
+---
+<Layout title="FAQ · Daniel Shaw">
+  <Header />
+  <main>
+    <section class="page-head"><div class="wrap">
+      <span class="mono y reveal">FAQ</span>
+      <h1 class="display reveal" style="--d:.08s">Fair questions.</h1>
+    </div></section>
+    <div class="light">
+      <div class="wrap">
+        <div class="narrow list">
+          {qs.map(([q, a]) => (<div class="reveal"><h3>{q}</h3><p>{a}</p></div>))}
+        </div>
+      </div>
+      <Cta title="Still have<br />a question?" />
+    </div>
+  </main>
+  <Footer />
+</Layout>

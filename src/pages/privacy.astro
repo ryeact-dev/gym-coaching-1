@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Cta from '../components/Cta.astro';
+const items = [
+  ['What I collect', 'When you fill in the form, I get your first name, your phone number or email, and your goal. Nothing else.'],
+  ['Why', 'Only to reply to you and book the call. I don’t sell or share it, and I don’t add you to a mailing list.'],
+  ['Client photos and stories', 'Chapters are shared only with the client’s written permission. A client can ask me to take theirs down at any time, and I will.'],
+  ['Your rights', 'You can ask what I hold about you, ask me to correct it or delete it. Email hello@danielshaw.co.uk.'],
+];
+---
+<Layout title="Privacy · Daniel Shaw">
+  <Header />
+  <main>
+    <section class="page-head"><div class="wrap">
+      <span class="mono y reveal">Privacy</span>
+      <h1 class="display reveal" style="--d:.08s">Your data,<br />in plain words.</h1>
+    </div></section>
+    <div class="light">
+      <div class="wrap">
+        <article class="story narrow-story">
+          {items.map(([t, p]) => (<><h3 class="reveal">{t}</h3><p class="reveal">{p}</p></>))}
+          <small class="mono dim reveal">Last updated: November 2026</small>
+        </article>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

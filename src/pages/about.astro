@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Cta from '../components/Cta.astro';
+const rules = [
+  ['Write it down', 'If it’s not in the file, it didn’t happen.'],
+  ['Three numbers, not ten', 'We pick what matters to you and move that.'],
+  ['The plan bends', 'Shifts, kids, travel: we change the plan, not the goal.'],
+];
+const tags = ['Level 3 Personal Trainer · 2024', 'First aid', 'Kettlebell instructor', 'Glasgow · or online'];
+---
+<Layout title="About · Daniel Shaw">
+  <Header />
+  <main>
+    <section class="page-head"><div class="wrap">
+      <span class="mono y reveal">The coach</span>
+      <h1 class="display" data-split>I’m Daniel.<br />I keep my list short.</h1>
+    </div></section>
+    <div class="light">
+      <div class="wrap about">
+        <div class="photo reveal" style="background-image:url(/images/coach.jpg);background-position:14% center"></div>
+        <div>
+          <div class="prose reveal">
+            <p>Two years ago I was the one quitting gyms by February. I’d start strong, miss a week, and never come back.</p>
+            <p>What changed it was a notebook. I wrote down every session, and for the first time I could see I was getting somewhere, even on the bad weeks.</p>
+            <p>Now I do that for my clients. Every session goes in your file, and I keep my list short so every file gets my full attention.</p>
+          </div>
+          <span class="mono dim reveal" style="display:block;margin:56px 0 18px">Three rules I train by</span>
+          <ol class="rules">
+            {rules.map(([t, p], i) => (<li class="reveal"><span class="mono dim">0{i + 1}</span><div><h3>{t}</h3><p>{p}</p></div></li>))}
+          </ol>
+          <div class="tags reveal">{tags.map((t) => <span class="mono">{t}</span>)}</div>
+        </div>
+      </div>
+      <Cta title="Let’s see if<br />we’re a fit." />
+    </div>
+  </main>
+  <Footer />
+</Layout>

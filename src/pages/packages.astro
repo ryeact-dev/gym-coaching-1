@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Cta from '../components/Cta.astro';
+import Plans from '../components/Plans.astro';
+const print = [
+  ['Cancelling', 'Cancel a session 24 hours ahead and it moves, free. Later than that, it counts as done.'],
+  ['Payments', 'The 12-week chapter can be split into three monthly payments. No fees for that.'],
+  ['Pausing', 'Ongoing clients can pause or stop with two weeks’ notice. Illness and injury pause straight away.'],
+  ['Booking', 'After the call you get a booking link. Pick your regular slots once and they stay yours.'],
+];
+---
+<Layout title="Packages · Daniel Shaw">
+  <Header />
+  <main>
+    <section class="page-head"><div class="wrap">
+      <span class="mono y reveal">Packages</span>
+      <h1 class="display reveal" style="--d:.08s">Clear prices.<br />No surprises.</h1>
+      <p class="reveal" style="--d:.16s">Three ways to train together. Prices in GBP, paid monthly or up front.</p>
+    </div></section>
+    <div class="light">
+      <div class="wrap" style="padding-block:90px 0">
+        <Plans />
+        <h2 class="h2 reveal" style="margin:120px 0 56px">The small print, in plain words.</h2>
+        <div class="print">
+          {print.map(([t, p]) => (<div class="reveal"><h3>{t}</h3><p>{p}</p></div>))}
+        </div>
+        <div class="friend reveal">
+          <div><span class="mono y">Bring a friend</span><h3>Train with a friend and you both get a free session.</h3><p>Tell me their name on the call. When they start, the free sessions go on both your files.</p></div>
+          <a class="btn" href="/#call">Book a call for two <span class="arr">→</span></a>
+        </div>
+      </div>
+      <Cta title="Not sure which<br />one fits?" />
+    </div>
+  </main>
+  <Footer />
+</Layout>
