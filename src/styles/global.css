@@ -214,5 +214,5 @@ img { display: block; max-width: 100%; }
 .panel.static .num { top: auto; bottom: 7vh; }
 .panel.static .num .lab { display: block; margin-bottom: 26px; }
 .panel.static .quote { top: auto; bottom: 7vh; }
-.panel.static::after { background: linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,.7) 100%); }
+.panel.static::after { background: linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 40%, rgba(0,0,0,.55) 68%, rgba(0,0,0,.92) 100%); }
 @media (max-width: 700px) { .panel.static .quote { top: 22vh; bottom: auto; } .panel.static .num h2 { font-size: 26vw; } }
